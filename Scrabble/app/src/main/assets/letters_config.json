@@ -1,0 +1,155 @@
+[
+  {
+    "value": "E",
+    "score": 1,
+    "amount": 15
+  },
+  {
+    "value": "N",
+    "score": 1,
+    "amount": 9
+  },
+  {
+    "value": "S",
+    "score": 1,
+    "amount": 7
+  },
+  {
+    "value": "I",
+    "score": 1,
+    "amount": 6
+  },
+  {
+    "value": "R",
+    "score": 1,
+    "amount": 6
+  },
+  {
+    "value": "T",
+    "score": 1,
+    "amount": 6
+  },
+  {
+    "value": "U",
+    "score": 1,
+    "amount": 6
+  },
+  {
+    "value": "A",
+    "score": 1,
+    "amount": 5
+  },
+  {
+    "value": "D",
+    "score": 1,
+    "amount": 4
+  },
+  {
+    "value": "H",
+    "score": 2,
+    "amount": 4
+  },
+  {
+    "value": "G",
+    "score": 2,
+    "amount": 3
+  },
+  {
+    "value": "L",
+    "score": 2,
+    "amount": 3
+  },
+  {
+    "value": "O",
+    "score": 2,
+    "amount": 3
+  },
+  {
+    "value": "M",
+    "score": 3,
+    "amount": 4
+  },
+  {
+    "value": "B",
+    "score": 3,
+    "amount": 2
+  },
+  {
+    "value": "W",
+    "score": 3,
+    "amount": 1
+  },
+  {
+    "value": "Z",
+    "score": 3,
+    "amount": 1
+  },
+  {
+    "value": "C",
+    "score": 4,
+    "amount": 2
+  },
+  {
+    "value": "F",
+    "score": 4,
+    "amount": 2
+  }
+,
+  {
+    "value": "K",
+    "score": 4,
+    "amount": 2
+  },
+  {
+    "value": "P",
+    "score": 4,
+    "amount": 1
+  },
+  {
+    "value": "Ä",
+    "score": 6,
+    "amount": 1
+  },
+  {
+    "value": "J",
+    "score": 6,
+    "amount": 1
+  }
+,
+  {
+    "value": "Ü",
+    "score": 6,
+    "amount": 1
+  },
+  {
+    "value": "V",
+    "score": 6,
+    "amount": 1
+  },
+
+  {
+    "value": "Ö",
+    "score": 8,
+    "amount": 1
+  },
+  {
+    "value": "X",
+    "score": 8,
+    "amount": 1
+  },
+  {
+    "value": "Q",
+    "score": 10,
+    "amount": 1
+  },
+  {
+    "value": "Y",
+    "score": 10,
+    "amount": 1
+  },
+  {
+    "value": "?",
+    "score": 0,
+    "amount": 2
+  }
+]

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scrabble</string>
+    <string name="error_message_not_connected">Dein neues Wort ist nicht mit dem Rest des Boards verbunden!</string>
+    <string name="error_message_no_new_word">Kein neues Wort!</string>
+    <string name="error_message_invalid_word">Unültiges Wort</string>
+    <string name="error_message_not_in_one_line">Deine Lösung befindet sich nicht in einer Linie!</string>
+</resources>

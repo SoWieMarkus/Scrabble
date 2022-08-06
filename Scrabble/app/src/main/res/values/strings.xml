@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Scrabble</string>
+    <string name="error_message_not_connected">Your solution is not connected to the rest of the board!</string>
+    <string name="error_message_no_new_word">No new word!</string>
+    <string name="error_message_invalid_word">Invalid word(s)</string>
+    <string name="error_message_not_in_one_line">Your solution is not in one line!</string>
+</resources>

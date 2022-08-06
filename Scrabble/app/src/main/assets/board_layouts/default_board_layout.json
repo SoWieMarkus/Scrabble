@@ -1,0 +1,429 @@
+{
+  "dimensions": {
+    "height": 15,
+    "width": 15
+  },
+  "specialFields": [
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 0,
+        "y": 14
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 0,
+        "y": 7
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 7,
+        "y": 0
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 7,
+        "y": 14
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 14,
+        "y": 0
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 14,
+        "y": 7
+      }
+    },
+    {
+      "type": "WORD_TIMES_THREE",
+      "coordinate": {
+        "x": 14,
+        "y": 14
+      }
+    },
+    {
+      "type": "START",
+      "coordinate": {
+        "x": 7,
+        "y": 7
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 3,
+        "y": 3
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 4,
+        "y": 4
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 5,
+        "y": 5
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 6,
+        "y": 6
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 8,
+        "y": 8
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 9,
+        "y": 9
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 10,
+        "y": 10
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 11,
+        "y": 11
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 12,
+        "y": 12
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 13,
+        "y": 13
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 1,
+        "y": 13
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 2,
+        "y": 12
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 3,
+        "y": 11
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 4,
+        "y": 10
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 5,
+        "y": 9
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 6,
+        "y": 8
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 8,
+        "y": 6
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 9,
+        "y": 5
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 10,
+        "y": 4
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 11,
+        "y": 3
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 12,
+        "y": 2
+      }
+    },
+    {
+      "type": "WORD_TIMES_TWO",
+      "coordinate": {
+        "x": 13,
+        "y": 1
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 0,
+        "y": 3
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 0,
+        "y": 11
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 3,
+        "y": 0
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 3,
+        "y": 7
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 3,
+        "y": 14
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 1,
+        "y": 5
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 1,
+        "y": 9
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 2,
+        "y": 6
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 2,
+        "y": 8
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 13,
+        "y": 5
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 13,
+        "y": 9
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 12,
+        "y": 6
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 14,
+        "y": 3
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 14,
+        "y": 11
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 11,
+        "y": 7
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 11,
+        "y": 0
+      }
+    },
+    {
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 11,
+        "y": 14
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 5,
+        "y": 1
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 9,
+        "y": 1
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 5,
+        "y": 13
+      }
+    },
+    {
+      "type": "LETTER_TIMES_THREE",
+      "coordinate": {
+        "x": 9,
+        "y": 13
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 7,
+        "y": 3
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 7,
+        "y": 11
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 6,
+        "y": 2
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 8,
+        "y": 2
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 6,
+        "y": 12
+      }
+    },{
+      "type": "LETTER_TIMES_TWO",
+      "coordinate": {
+        "x": 8,
+        "y": 12
+      }
+    }
+  ]
+}

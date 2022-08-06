@@ -1,0 +1,7 @@
+
+7	java:S131=""Add a default case to this switch.(’Ýï‘
+R	java:S125Ÿ"<This block of commented-out lines of code should be removed.(œ¯¤
+S
+java:S1128	"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8Ñî‡™¦0
+I
+java:S1068"3Remove this unused "lastScaleFactor" private field.(¹ÏÓâ
