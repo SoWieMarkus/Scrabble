@@ -48,8 +48,9 @@ public class SearchBoard extends Board {
             if (get(nextCoordinate).getLetter() != null) break;
             amount++;
             nextCoordinate = nextCoordinate.getNextCoordinate(direction);
+            if (!getDimension().isInsideRange(nextCoordinate)) amount++;
         }
-        return amount;
+        return Math.min(amount, 7);
     }
 
     @Override

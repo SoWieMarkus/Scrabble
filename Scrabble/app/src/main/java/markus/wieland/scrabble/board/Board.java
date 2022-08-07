@@ -34,7 +34,7 @@ public class Board extends Matrix<Field> {
 
             for (int j = 0; j < getWidth(); j++) {
                 if (get(i,j) instanceof AdjacentSearchField){
-                    row.append(((AdjacentSearchField) get(i,j)).getStepsUp());
+                    row.append(((AdjacentSearchField) get(i,j)).getStepsLeft());
                     continue;
                 }
                 Letter letter = get(i,j).getLetter();
