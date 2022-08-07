@@ -13,6 +13,9 @@ public class AdjacentSearchField extends SearchField {
     private int stepsUp;
     private int stepsLeft;
 
+    private String wordRight;
+    private String wordDown;
+
     public AdjacentSearchField(Field field) {
         super(field.getCoordinate());
         validLetters = new ValidLetters();

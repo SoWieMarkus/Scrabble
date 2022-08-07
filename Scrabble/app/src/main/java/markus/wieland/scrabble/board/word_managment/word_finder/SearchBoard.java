@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.Field;
+import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Direction;
 
@@ -32,9 +33,13 @@ public class SearchBoard extends Board {
         for (Direction direction : Objects.requireNonNull(Direction.class.getEnumConstants())) {
             Coordinate nextCoordinate = field.getCoordinate().getNextCoordinate(direction);
             if (!getDimension().isInsideRange(nextCoordinate) || get(nextCoordinate).getLetter() != null) continue;
+
             AdjacentSearchField searchField = new AdjacentSearchField(field);
             searchField.setStepsUp(getAmountFreeFields(Direction.UP, nextCoordinate));
             searchField.setStepsLeft(getAmountFreeFields(Direction.LEFT, nextCoordinate));
+            searchField.setWordDown(getWord(Direction.DOWN, nextCoordinate));
+            searchField.setWordRight(getWord(Direction.RIGHT, nextCoordinate));
+
             set(nextCoordinate, searchField);
             coordinatesOfAdjacentFields.add(nextCoordinate);
         }
@@ -63,5 +68,16 @@ public class SearchBoard extends Board {
             SearchField field = new SearchField(coordinate);
             set(coordinate, field);
         }
+    }
+
+    private String getWord(Direction direction, Coordinate coordinate) {
+        StringBuilder stringBuilder = new StringBuilder();
+        while(getDimension().isInsideRange(coordinate)) {
+            Letter letter = get(coordinate).getLetter();
+            if (letter == null) break;
+            stringBuilder.append(letter.getValue());
+            coordinate = coordinate.getNextCoordinate(direction);
+        }
+        return stringBuilder.toString();
     }
 }
