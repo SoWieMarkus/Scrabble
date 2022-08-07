@@ -13,7 +13,7 @@ import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.FileReader;
 import markus.wieland.scrabble.new_version.Scrabble;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
+import markus.wieland.scrabble.board.layout.BoardLayout;
 
 public class MainActivity extends DefaultActivity {
 

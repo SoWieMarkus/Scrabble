@@ -12,7 +12,7 @@ import markus.wieland.scrabble.new_version.board.BoardMatrix;
 import markus.wieland.scrabble.new_version.board.Field;
 import markus.wieland.scrabble.new_version.board.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
+import markus.wieland.scrabble.board.layout.BoardLayout;
 import markus.wieland.scrabble.new_version.config.LetterGenerator;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Matrix;

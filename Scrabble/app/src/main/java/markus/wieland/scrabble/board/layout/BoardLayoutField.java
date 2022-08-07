@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.new_version.board.board_layout;
+package markus.wieland.scrabble.board.layout;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import markus.wieland.scrabble.R;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayoutField;
+import markus.wieland.scrabble.board.layout.BoardLayoutField;
 
 public class FieldView extends View {
 

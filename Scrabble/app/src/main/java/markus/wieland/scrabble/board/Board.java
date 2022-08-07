@@ -1,12 +1,13 @@
 package markus.wieland.scrabble.board;
 
+import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.board.word_managment.word_finder.AdjacentSearchField;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
 import markus.wieland.scrabble.helper.Matrix;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
+import markus.wieland.scrabble.board.layout.BoardLayout;
 
 public class Board extends Matrix<Field> {
 
@@ -17,6 +18,10 @@ public class Board extends Matrix<Field> {
 
     public Board(BoardLayout boardLayout) {
         this(boardLayout.getDimensions());
+
+        for (BoardLayoutField boardLayoutField : boardLayout.getSpecialFields()) {
+            get(boardLayoutField.getCoordinate()).setSpecialBlockType(boardLayoutField.getSpecialBlock());
+        }
 
         //TODO
     }

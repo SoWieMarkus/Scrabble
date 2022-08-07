@@ -5,8 +5,8 @@ import java.util.List;
 
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.new_version.Word;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
-import markus.wieland.scrabble.new_version.board.board_layout.BoardLayoutField;
+import markus.wieland.scrabble.board.layout.BoardLayout;
+import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Matrix;
 
