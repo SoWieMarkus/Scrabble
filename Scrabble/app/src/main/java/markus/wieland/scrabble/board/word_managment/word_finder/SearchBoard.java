@@ -72,11 +72,12 @@ public class SearchBoard extends Board {
 
     private String getWord(Direction direction, Coordinate coordinate) {
         StringBuilder stringBuilder = new StringBuilder();
+
         while(getDimension().isInsideRange(coordinate)) {
+            coordinate = coordinate.getNextCoordinate(direction);
             Letter letter = get(coordinate).getLetter();
             if (letter == null) break;
             stringBuilder.append(letter.getValue());
-            coordinate = coordinate.getNextCoordinate(direction);
         }
         return stringBuilder.toString();
     }
