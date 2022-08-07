@@ -6,8 +6,8 @@ import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.scrabble.new_version.board.Field;
-import markus.wieland.scrabble.new_version.board.SpecialBlockType;
-import markus.wieland.scrabble.new_version.helper.Direction;
+import markus.wieland.scrabble.game.SpecialBlockType;
+import markus.wieland.scrabble.helper.Direction;
 
 @Getter
 @Setter

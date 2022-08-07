@@ -1,6 +1,6 @@
 package markus.wieland.scrabble.new_version.word_finder;
 
-import markus.wieland.scrabble.new_version.helper.Coordinate;
+import markus.wieland.scrabble.helper.Coordinate;
 
 
 public class ScrabbleWordFinderLetterField extends ScrabbleWordFinderField {

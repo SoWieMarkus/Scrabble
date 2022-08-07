@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import markus.wieland.scrabble.new_version.helper.Matrix;
+import markus.wieland.scrabble.helper.Matrix;
 
 public class ScrabbleAdapter<T extends View> extends BaseAdapter {
 

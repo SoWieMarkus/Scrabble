@@ -3,11 +3,12 @@ package markus.wieland.scrabble.new_version.board;
 import java.util.ArrayList;
 import java.util.List;
 
+import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.new_version.Word;
 import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
 import markus.wieland.scrabble.new_version.board.board_layout.BoardLayoutField;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Matrix;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Matrix;
 
 
 public class BoardMatrix extends Matrix<Field> {

@@ -3,22 +3,15 @@ package markus.wieland.scrabble.new_version.word_finder;
 import android.app.Activity;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import markus.wieland.scrabble.new_version.Word;
 import markus.wieland.scrabble.new_version.board.BoardMatrix;
 import markus.wieland.scrabble.new_version.board.Field;
 import markus.wieland.scrabble.new_version.board.Letter;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Direction;
-import markus.wieland.scrabble.new_version.helper.Matrix;
-import markus.wieland.scrabble.new_version.word_finder.Move;
-import markus.wieland.scrabble.new_version.word_finder.ScrabbleWordFinderLetterField;
-import markus.wieland.scrabble.new_version.word_finder.ScrabbleWordFinderSearchField;
-import markus.wieland.scrabble.validation.Characters;
-import markus.wieland.scrabble.validation.ValidWord;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Direction;
+import markus.wieland.scrabble.helper.Matrix;
+import markus.wieland.scrabble.old_versiob.validation.Characters;
 
 public class ScrabbleWordFinder {
 

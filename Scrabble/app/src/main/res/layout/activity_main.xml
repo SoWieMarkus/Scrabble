@@ -37,7 +37,7 @@
 
     </markus.wieland.scrabble.new_version.views.MatrixView>
 
-    <markus.wieland.scrabble.ui.ScrabbleView
+    <markus.wieland.scrabble.old_versiob.ui.ScrabbleView
         android:id="@+id/scrabble_view_inventory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

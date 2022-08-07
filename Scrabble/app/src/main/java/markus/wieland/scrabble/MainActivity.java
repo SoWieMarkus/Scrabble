@@ -5,31 +5,15 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
-import markus.wieland.scrabble.new_version.Inventory;
+import markus.wieland.scrabble.board.Board;
+import markus.wieland.scrabble.board.word_managment.word_finder.WordFinder;
+import markus.wieland.scrabble.game.Letter;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.FileReader;
 import markus.wieland.scrabble.new_version.Scrabble;
-import markus.wieland.scrabble.new_version.Word;
-import markus.wieland.scrabble.new_version.board.BoardMatrix;
-import markus.wieland.scrabble.new_version.board.Letter;
 import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.FileReader;
-import markus.wieland.scrabble.new_version.helper.Matrix;
-import markus.wieland.scrabble.new_version.views.LetterView;
-import markus.wieland.scrabble.new_version.views.MatrixView;
-import markus.wieland.scrabble.new_version.views.SizeChangedListener;
-import markus.wieland.scrabble.new_version.views.SpecialBlockView;
-import markus.wieland.scrabble.new_version.views.ScrabbleAdapter;
-import markus.wieland.scrabble.new_version.word_finder.new_versiob.WordFinder;
-import markus.wieland.scrabble.ui.ScrabbleHandAdapter;
-import markus.wieland.scrabble.ui.ScrabbleView;
-import markus.wieland.scrabble.validation.ValidWord;
-import markus.wieland.scrabble.validation.ValidationResult;
-import markus.wieland.scrabble.validation.WordValidator;
 
 public class MainActivity extends DefaultActivity {
 
@@ -69,24 +53,30 @@ public class MainActivity extends DefaultActivity {
         matrixView2.setNumColumns(boardLayout.getDimensions().getWidth());*/
 
         BoardLayout boardLayout = fileReader.read("board_layouts/default_board_layout.json", BoardLayout.class);
-        BoardMatrix boardMatrix = new BoardMatrix(boardLayout);
-        boardMatrix.get(new Coordinate(7,7)).setLetter(new Letter(2,'L'));
-        boardMatrix.get(new Coordinate(7,8)).setLetter(new Letter(1,'U'));
-        boardMatrix.get(new Coordinate(7,9)).setLetter(new Letter(4,'C'));
-        boardMatrix.get(new Coordinate(7,10)).setLetter(new Letter(1,'I'));
-        boardMatrix.get(new Coordinate(7,11)).setLetter(new Letter(1,'E'));
+        Board boardMatrix = new Board(boardLayout);
+        boardMatrix.get(new Coordinate(7, 7)).setLetter(new Letter(2, 'L'));
+        boardMatrix.get(new Coordinate(7, 8)).setLetter(new Letter(1, 'U'));
+        boardMatrix.get(new Coordinate(7, 9)).setLetter(new Letter(4, 'C'));
+        boardMatrix.get(new Coordinate(7, 10)).setLetter(new Letter(1, 'I'));
+        boardMatrix.get(new Coordinate(7, 11)).setLetter(new Letter(1, 'E'));
 
-        boardMatrix.get(new Coordinate(6, 8)).setLetter(new Letter(4,'K'));
-        boardMatrix.get(new Coordinate(5, 8)).setLetter(new Letter(4,'R'));
-        boardMatrix.get(new Coordinate(5, 9)).setLetter(new Letter(4,'U'));
-        boardMatrix.get(new Coordinate(4, 8)).setLetter(new Letter(4,'A'));
-        boardMatrix.get(new Coordinate(4, 9)).setLetter(new Letter(4,'R'));
-        boardMatrix.get(new Coordinate(4, 10)).setLetter(new Letter(4,'M'));
-        boardMatrix.get(new Coordinate(3, 8)).setLetter(new Letter(4,'M'));
-        boardMatrix.get(new Coordinate(8, 8)).setLetter(new Letter(4,'S'));
+        boardMatrix.get(new Coordinate(6, 8)).setLetter(new Letter(4, 'K'));
+        boardMatrix.get(new Coordinate(5, 8)).setLetter(new Letter(4, 'R'));
+        boardMatrix.get(new Coordinate(5, 9)).setLetter(new Letter(4, 'U'));
+        boardMatrix.get(new Coordinate(4, 8)).setLetter(new Letter(4, 'A'));
+        boardMatrix.get(new Coordinate(4, 9)).setLetter(new Letter(4, 'R'));
+        boardMatrix.get(new Coordinate(4, 10)).setLetter(new Letter(4, 'M'));
+        boardMatrix.get(new Coordinate(3, 8)).setLetter(new Letter(4, 'M'));
+        boardMatrix.get(new Coordinate(8, 8)).setLetter(new Letter(4, 'S'));
+
+        long millis = System.currentTimeMillis();
+        WordFinder wordFinder = new WordFinder(boardMatrix);
 
 
-        Inventory inventory = new Inventory();
+        Log.e("TIME", (System.currentTimeMillis()-millis)+"ms");
+
+        wordFinder.getSearchBoard().print();
+        /*Inventory inventory = new Inventory();
         List<Letter> letters = new ArrayList<>();
         letters.add(new Letter(1, 'H'));
         letters.add(new Letter(1, 'O'));
@@ -95,8 +85,8 @@ public class MainActivity extends DefaultActivity {
         letters.add(new Letter(1, 'R'));
         letters.add(new Letter(1, 'Z'));
         letters.add(new Letter(1, 'T'));
-        inventory.add(letters);
-        WordFinder wordFinder = new WordFinder(this, boardMatrix, inventory);
+        inventory.add(letters)*/
+        /*WordFinder wordFinder = new WordFinder(this, boardMatrix, inventory);
 
 
         List<String> strings = inventory.getAllPossibleCombinations(7);
@@ -105,7 +95,7 @@ public class MainActivity extends DefaultActivity {
         int x = 0;
 
 
-        strings.addAll(null);
+        strings.addAll(null);*/
 
 
 
@@ -210,11 +200,11 @@ public class MainActivity extends DefaultActivity {
         @Override
         public boolean onDrag(View v, DragEvent event) {
             if (event.getAction() == DragEvent.ACTION_DROP) {
-                View view = (View)event.getLocalState();
-                Letter letter = (Letter) view.getTag();
+                View view = (View) event.getLocalState();
+                markus.wieland.scrabble.new_version.board.Letter letter = (markus.wieland.scrabble.new_version.board.Letter) view.getTag();
                 Toast.makeText(MainActivity.this, coordinate.toString(), Toast.LENGTH_SHORT).show();
                 //
-                boolean wasGood = scrabble.setLetter(coordinate,letter);
+                boolean wasGood = scrabble.setLetter(coordinate, letter);
 
                 if (!wasGood) {
                     view.setVisibility(View.VISIBLE);

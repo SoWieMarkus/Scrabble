@@ -11,20 +11,19 @@ import markus.wieland.scrabble.R;
 import markus.wieland.scrabble.new_version.board.BoardMatrix;
 import markus.wieland.scrabble.new_version.board.Field;
 import markus.wieland.scrabble.new_version.board.Letter;
-import markus.wieland.scrabble.new_version.board.SpecialBlock;
-import markus.wieland.scrabble.new_version.board.SpecialBlockType;
+import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.new_version.board.board_layout.BoardLayout;
 import markus.wieland.scrabble.new_version.config.LetterGenerator;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Matrix;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Matrix;
 import markus.wieland.scrabble.new_version.views.LetterView;
 import markus.wieland.scrabble.new_version.views.SpecialBlockView;
 import markus.wieland.scrabble.new_version.word_finder.ScrabbleWordFinder;
-import markus.wieland.scrabble.validation.IllegalConnectionCheck;
-import markus.wieland.scrabble.validation.IllegalMultipleRowColumnCheck;
-import markus.wieland.scrabble.validation.IllegalWordCheck;
-import markus.wieland.scrabble.validation.Validation;
-import markus.wieland.scrabble.validation.ValidationResult;
+import markus.wieland.scrabble.old_versiob.validation.IllegalConnectionCheck;
+import markus.wieland.scrabble.old_versiob.validation.IllegalMultipleRowColumnCheck;
+import markus.wieland.scrabble.old_versiob.validation.IllegalWordCheck;
+import markus.wieland.scrabble.old_versiob.validation.Validation;
+import markus.wieland.scrabble.old_versiob.validation.ValidationResult;
 
 @Getter
 public class Scrabble {

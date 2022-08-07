@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Direction;
-import markus.wieland.scrabble.validation.Characters;
-import markus.wieland.scrabble.validation.ValidWord;
-import markus.wieland.scrabble.validation.WordValidator;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Direction;
+import markus.wieland.scrabble.old_versiob.validation.Characters;
+import markus.wieland.scrabble.old_versiob.validation.ValidWord;
+import markus.wieland.scrabble.old_versiob.validation.WordValidator;
 
 @Getter
 public class ScrabbleWordFinderSearchField extends ScrabbleWordFinderField {

@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes;
 
 import lombok.Getter;
 import lombok.Setter;
+import markus.wieland.scrabble.game.SpecialBlockType;
 
 @Getter
 @Setter

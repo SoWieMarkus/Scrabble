@@ -3,10 +3,10 @@ package markus.wieland.scrabble;
 import java.util.ArrayList;
 import java.util.List;
 
-import markus.wieland.scrabble.game.PlacedLetter;
-import markus.wieland.scrabble.game.Word;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Matrix;
+import markus.wieland.scrabble.old_versiob.game.PlacedLetter;
+import markus.wieland.scrabble.old_versiob.game.Word;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Matrix;
 
 public class Dictionary {
 

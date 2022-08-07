@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import markus.wieland.scrabble.new_version.board.Letter;
-import markus.wieland.scrabble.new_version.helper.FileReader;
+import markus.wieland.scrabble.helper.FileReader;
 
 public class LetterGenerator {
 

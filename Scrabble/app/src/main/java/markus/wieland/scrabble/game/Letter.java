@@ -1,27 +1,19 @@
 package markus.wieland.scrabble.game;
 
-import androidx.annotation.NonNull;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class Letter {
 
-    public static final String JOKER = "?";
+    public static final char JOKER = '?';
 
-    private final String value;
-    private final int points;
+    private final int score;
+    private final char value;
 
-    public Letter(String value, int points) {
-        this.value = value.toUpperCase();
-        this.points = points;
-    }
-
-    @NonNull
-    @Override
-    public String toString() {
-        if (value.equals(JOKER)) return "";
-        return value;
+    public boolean isJoker() {
+        return value == JOKER;
     }
 
 }

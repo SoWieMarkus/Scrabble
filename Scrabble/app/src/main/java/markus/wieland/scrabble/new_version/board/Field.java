@@ -2,7 +2,8 @@ package markus.wieland.scrabble.new_version.board;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
+import markus.wieland.scrabble.game.SpecialBlockType;
+import markus.wieland.scrabble.helper.Coordinate;
 
 @Getter
 @Setter

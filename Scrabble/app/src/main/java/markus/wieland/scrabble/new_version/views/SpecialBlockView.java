@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import markus.wieland.scrabble.R;
-import markus.wieland.scrabble.new_version.board.SpecialBlockType;
+import markus.wieland.scrabble.game.SpecialBlockType;
 
 public class SpecialBlockView extends View {
 

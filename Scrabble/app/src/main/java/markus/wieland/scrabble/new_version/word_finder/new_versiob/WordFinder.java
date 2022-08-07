@@ -10,10 +10,10 @@ import java.util.Objects;
 import markus.wieland.scrabble.new_version.Inventory;
 import markus.wieland.scrabble.new_version.board.BoardMatrix;
 import markus.wieland.scrabble.new_version.board.Field;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Dimension;
-import markus.wieland.scrabble.new_version.helper.Direction;
-import markus.wieland.scrabble.new_version.helper.FileReader;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Dimension;
+import markus.wieland.scrabble.helper.Direction;
+import markus.wieland.scrabble.helper.FileReader;
 
 public class WordFinder {
 

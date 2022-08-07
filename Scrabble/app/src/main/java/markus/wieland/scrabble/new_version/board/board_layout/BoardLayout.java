@@ -7,7 +7,7 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.scrabble.new_version.helper.Dimension;
+import markus.wieland.scrabble.helper.Dimension;
 
 @Getter
 @Setter

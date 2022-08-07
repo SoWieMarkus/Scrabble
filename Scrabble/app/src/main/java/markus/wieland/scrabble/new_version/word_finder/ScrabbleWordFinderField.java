@@ -1,7 +1,7 @@
 package markus.wieland.scrabble.new_version.word_finder;
 
 import lombok.Getter;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
+import markus.wieland.scrabble.helper.Coordinate;
 
 @Getter
 public class ScrabbleWordFinderField {

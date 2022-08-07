@@ -8,8 +8,8 @@ import java.util.List;
 
 import lombok.Getter;
 import markus.wieland.scrabble.new_version.board.Letter;
-import markus.wieland.scrabble.new_version.helper.Coordinate;
-import markus.wieland.scrabble.new_version.helper.Range;
+import markus.wieland.scrabble.helper.Coordinate;
+import markus.wieland.scrabble.helper.Range;
 
 @Getter
 public class Word implements Iterable<Letter>{

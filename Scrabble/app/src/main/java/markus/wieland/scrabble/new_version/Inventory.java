@@ -6,8 +6,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import markus.wieland.scrabble.new_version.board.Letter;
-import markus.wieland.scrabble.new_version.helper.Matrix;
-import markus.wieland.scrabble.validation.Characters;
+import markus.wieland.scrabble.helper.Matrix;
+import markus.wieland.scrabble.old_versiob.validation.Characters;
 
 public class Inventory extends Matrix<Letter> {
 
