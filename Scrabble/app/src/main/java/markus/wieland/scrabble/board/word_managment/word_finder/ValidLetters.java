@@ -9,26 +9,32 @@ import markus.wieland.scrabble.helper.Axis;
 @Getter
 public class ValidLetters {
 
-    private Set<Character> validLettersHorizontal;
-    private Set<Character> validLettersVertical;
+    private final Set<Character> validLettersHorizontal;
+    private final Set<Character> validLettersVertical;
+
+    public ValidLetters(){
+        this.validLettersHorizontal = new HashSet<>();
+        this.validLettersVertical = new HashSet<>();
+    }
 
     public void add(Axis axis, char letter) {
         switch (axis) {
             case VERTICAL:
-                if (validLettersVertical == null) validLettersVertical = new HashSet<>();
                 validLettersVertical.add(letter);
                 break;
             case HORIZONTAL:
-                if (validLettersHorizontal == null) validLettersHorizontal = new HashSet<>();
-                validLettersVertical.add(letter);
+                validLettersHorizontal.add(letter);
                 break;
             default:
                 throw new IllegalStateException();
         }
     }
 
-    public boolean lettersExists(Axis axis) {
-        return false;
+    public Set<Character> getAllCharacters(){
+        Set<Character> characters = new HashSet<>();
+        characters.addAll(validLettersHorizontal);
+        characters.addAll(validLettersVertical);
+        return characters;
     }
 
     public boolean contains(Axis axis, char letter) {

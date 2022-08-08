@@ -15,7 +15,7 @@ import markus.wieland.scrabble.helper.FileReader;
 @Getter
 public class Letters {
 
-    private static final char[] ALL_POSSIBLE_LETTERS = new char[29];
+    public static final char[] ALL_POSSIBLE_LETTERS = new char[29];
     private static final String LETTERS_CONFIG_FILE = "letters_config.json";
     private static final List<LetterConfig> LETTERS_CONFIG = new ArrayList<>();
 

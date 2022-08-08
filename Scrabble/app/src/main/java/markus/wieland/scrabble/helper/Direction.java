@@ -15,6 +15,10 @@ public enum Direction {
     private final int vertical;
     private final int horizontal;
 
+    public boolean isNegativeDirection(){
+        return horizontal < 0 || vertical < 0;
+    }
+
     public boolean isHorizontal(){
         return horizontal != 0;
     }

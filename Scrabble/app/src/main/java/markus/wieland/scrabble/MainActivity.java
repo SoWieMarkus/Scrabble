@@ -5,10 +5,15 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.scrabble.board.Board;
+import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.word_finder.WordFinder;
+import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.FileReader;
@@ -38,6 +43,8 @@ public class MainActivity extends DefaultActivity {
 
         FileReader fileReader = new FileReader(this);
 
+        SearchTree searchTree = SearchTree.getInstance(this);
+
         /*MatrixView matrixView = findViewById(R.id.scrabble_view_fields);
         MatrixView matrixView2 = findViewById(R.id.scrabble_view_letters);
 
@@ -52,6 +59,16 @@ public class MainActivity extends DefaultActivity {
         matrixView.setNumColumns(boardLayout.getDimensions().getWidth());
         matrixView2.setNumColumns(boardLayout.getDimensions().getWidth());*/
 
+        Inventory inventory = new Inventory();
+        List<Letter> letters = new ArrayList<>();
+        letters.add(new Letter(1, 'H'));
+        letters.add(new Letter(1, 'O'));
+        letters.add(new Letter(1, 'F'));
+        letters.add(new Letter(1, 'A'));
+        letters.add(new Letter(1, 'R'));
+        letters.add(new Letter(1, 'Z'));
+        letters.add(new Letter(1, 'T'));
+        inventory.add(letters);
         BoardLayout boardLayout = fileReader.read("board_layouts/default_board_layout.json", BoardLayout.class);
         Board boardMatrix = new Board(boardLayout);
         boardMatrix.get(new Coordinate(7, 7)).setLetter(new Letter(2, 'L'));
@@ -70,12 +87,19 @@ public class MainActivity extends DefaultActivity {
         boardMatrix.get(new Coordinate(8, 8)).setLetter(new Letter(4, 'S'));
 
         long millis = System.currentTimeMillis();
-        WordFinder wordFinder = new WordFinder(boardMatrix);
+        WordFinder wordFinder = new WordFinder(boardMatrix, inventory);
 
 
         Log.e("TIME", (System.currentTimeMillis()-millis)+"ms");
 
         wordFinder.getSearchBoard().print();
+
+        long millis2 = System.currentTimeMillis();
+        wordFinder.getPossibleMoves(this);
+
+
+        Log.e("TIME2", (System.currentTimeMillis()-millis2)+"ms");
+        int x = 0;
         /*Inventory inventory = new Inventory();
         List<Letter> letters = new ArrayList<>();
         letters.add(new Letter(1, 'H'));

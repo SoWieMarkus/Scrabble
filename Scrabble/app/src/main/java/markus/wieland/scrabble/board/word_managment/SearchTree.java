@@ -44,4 +44,32 @@ public class SearchTree {
         currentNode.setTerminal(true);
     }
 
+    public SearchTreeNode search(String word){
+        return search(root, word);
+    }
+
+    public SearchTreeNode search(SearchTreeNode node, String word) {
+        SearchTreeNode currentNode = node;
+        for (char letter : word.toCharArray()) {
+            if (!currentNode.getChildren().containsKey(letter)) {
+                return null;
+            }
+            currentNode = currentNode.getChildren().get(letter);
+        }
+        return currentNode;
+    }
+
+    public boolean isValidPrefix(String prefix) {
+        return search(prefix) != null;
+    }
+
+    public boolean isValidWord(String word){
+        return isValidWord(root, word);
+    }
+
+    public boolean isValidWord(SearchTreeNode searchTreeNode, String word){
+        SearchTreeNode finalNode = search(searchTreeNode, word);
+        return finalNode != null && finalNode.isTerminal();
+    }
+
 }
