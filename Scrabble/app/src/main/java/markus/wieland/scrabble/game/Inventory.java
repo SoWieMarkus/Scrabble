@@ -25,7 +25,7 @@ public class Inventory {
         if (!lettersToAdd.isEmpty()) throw new AssertionError();
     }
 
-    public char[] getCharArray(){
+    public char[] getSetOfPossibleLetters(){
         int amountOfLetters = 0;
         for (Letter letter : letters) {
             if (letter == null) continue;

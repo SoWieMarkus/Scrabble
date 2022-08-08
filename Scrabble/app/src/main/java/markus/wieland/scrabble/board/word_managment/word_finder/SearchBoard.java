@@ -72,7 +72,7 @@ public class SearchBoard extends Board {
     }
 
     public void calculatePossibleCharacters(Inventory inventory, SearchTree searchTree) {
-        char[] lettersToCheck = inventory.getCharArray();
+        char[] lettersToCheck = inventory.getSetOfPossibleLetters();
         for (Coordinate coordinate : coordinatesOfAdjacentFields) {
             AdjacentSearchField searchField = (AdjacentSearchField) get(coordinate);
             for (Axis axis : Objects.requireNonNull(Axis.class.getEnumConstants())) {
