@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
+import markus.wieland.scrabble.board.word_managment.word_finder.PrefixTree;
 import markus.wieland.scrabble.board.word_managment.word_finder.WordFinder;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.game.Letter;
@@ -67,7 +68,7 @@ public class MainActivity extends DefaultActivity {
         letters.add(new Letter(1, 'A'));
         letters.add(new Letter(1, 'R'));
         letters.add(new Letter(1, 'Z'));
-        letters.add(new Letter(1, 'T'));
+        letters.add(new Letter(1, '?'));
         inventory.add(letters);
         BoardLayout boardLayout = fileReader.read("board_layouts/default_board_layout.json", BoardLayout.class);
         Board boardMatrix = new Board(boardLayout);
@@ -100,6 +101,9 @@ public class MainActivity extends DefaultActivity {
 
         Log.e("TIME2", (System.currentTimeMillis()-millis2)+"ms");
         int x = 0;
+
+        x = 0;
+
         /*Inventory inventory = new Inventory();
         List<Letter> letters = new ArrayList<>();
         letters.add(new Letter(1, 'H'));

@@ -1,19 +1,16 @@
 package markus.wieland.scrabble.board.word_managment;
 
-import java.util.HashMap;
-
 import lombok.Getter;
 import lombok.Setter;
+import markus.wieland.scrabble.helper.TreeNode;
 
 @Getter
 @Setter
-public class SearchTreeNode {
+public class SearchTreeNode extends TreeNode {
 
-    private final HashMap<Character, SearchTreeNode> children;
     private boolean terminal;
 
-    public SearchTreeNode() {
-        this.children = new HashMap<>();
+    public SearchTreeNode get(char letter) {
+        return (SearchTreeNode) super.get(letter);
     }
-
 }

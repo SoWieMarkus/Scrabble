@@ -5,7 +5,6 @@ import android.app.Activity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import lombok.Getter;
@@ -15,11 +14,22 @@ import markus.wieland.scrabble.helper.FileReader;
 @Getter
 public class Letters {
 
+    public static final int TO_LOWER_CASE = 32;
+    public static final int TO_UPPER_CASE = -1 * TO_LOWER_CASE;
+    public static final char JOKER = '?';
     public static final char[] ALL_POSSIBLE_LETTERS = new char[29];
     private static final String LETTERS_CONFIG_FILE = "letters_config.json";
     private static final List<LetterConfig> LETTERS_CONFIG = new ArrayList<>();
 
     private final List<Letter> listOfLetters;
+
+    public static char toLowerCase(char letter) {
+        return (char) (letter + TO_LOWER_CASE);
+    }
+
+    public static char toUpperCase(char letter) {
+        return (char) (letter + TO_UPPER_CASE);
+    }
 
     public Letters(Activity activity) {
         this.listOfLetters = new ArrayList<>();

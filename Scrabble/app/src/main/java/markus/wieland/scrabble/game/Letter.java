@@ -2,18 +2,17 @@ package markus.wieland.scrabble.game;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import markus.wieland.scrabble.game.letters.Letters;
 
 @Getter
 @AllArgsConstructor
 public class Letter {
 
-    public static final char JOKER = '?';
-
     private final int score;
     private final char value;
 
     public boolean isJoker() {
-        return value == JOKER;
+        return value == Letters.JOKER;
     }
 
 }
