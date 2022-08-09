@@ -1,11 +1,10 @@
-package markus.wieland.scrabble.board.word_managment.word_finder;
+package markus.wieland.scrabble.board.word_managment.solver;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import lombok.Getter;
 import markus.wieland.scrabble.helper.Axis;
-import markus.wieland.scrabble.helper.Coordinate;
 
 @Getter
 public class ValidLetters {

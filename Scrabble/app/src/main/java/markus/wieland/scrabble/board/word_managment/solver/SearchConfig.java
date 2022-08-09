@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.board.word_managment.word_finder;
+package markus.wieland.scrabble.board.word_managment.solver;
 
 import lombok.Getter;
 import lombok.Setter;

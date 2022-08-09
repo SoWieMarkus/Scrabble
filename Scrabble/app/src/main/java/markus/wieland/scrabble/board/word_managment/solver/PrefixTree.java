@@ -1,14 +1,10 @@
-package markus.wieland.scrabble.board.word_managment.word_finder;
+package markus.wieland.scrabble.board.word_managment.solver;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import markus.wieland.scrabble.game.letters.Letters;
 import markus.wieland.scrabble.helper.Tree;
-import markus.wieland.scrabble.helper.TreeNode;
-import markus.wieland.scrabble.old_versiob.validation.Characters;
 
 public class PrefixTree extends Tree {
 

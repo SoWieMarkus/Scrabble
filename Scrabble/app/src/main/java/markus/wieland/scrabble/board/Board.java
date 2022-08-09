@@ -1,7 +1,7 @@
 package markus.wieland.scrabble.board;
 
 import markus.wieland.scrabble.board.layout.BoardLayoutField;
-import markus.wieland.scrabble.board.word_managment.word_finder.AdjacentSearchField;
+import markus.wieland.scrabble.board.word_managment.solver.AdjacentSearchField;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.helper.Coordinate;
