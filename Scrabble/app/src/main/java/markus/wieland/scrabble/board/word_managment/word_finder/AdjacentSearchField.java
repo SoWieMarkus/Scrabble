@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.scrabble.board.Field;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
-import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
+import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Direction;
 
@@ -24,16 +24,26 @@ public class AdjacentSearchField extends SearchField {
     private String wordRight;
     private String wordDown;
 
+    private Pattern patternLeft;
+    private Pattern patternUp;
+
     private Set<Direction> directionsDiscovered;
 
     private boolean horizontal;
     private boolean vertical;
+
+    private final Set<Prefix> prefixesLeft;
+    private final Set<Prefix> prefixesUp;
 
     public AdjacentSearchField(Field field) {
         super(field.getCoordinate());
         this.validLetters = new ValidLetters();
         this.directionsDiscovered = new HashSet<>();
         this.stepsLeft = 0;
+        this.patternLeft = new Pattern();
+        this.patternUp = new Pattern();
+        this.prefixesLeft = new HashSet<>();
+        this.prefixesUp = new HashSet<>();
         this.stepsUp = 0;
     }
 
@@ -66,17 +76,20 @@ public class AdjacentSearchField extends SearchField {
         }
     }
 
-    public String getWordByAxis(Axis axis, char letter) {
-        return getWord(axis.getDirectionNegative()) + letter + getWord(axis.getDirectionPositive());
+    public void calculateValidPrefix(Inventory inventory, SearchTree searchTree) {
+        Set<Prefix> left = inventory.getPrefixTree().generatePrefix(stepsLeft, patternLeft);
+        Set<Prefix> up = inventory.getPrefixTree().generatePrefix(stepsUp, patternUp);
+
+        for (Prefix prefix : left) {
+            if (searchTree.isValidPrefix(prefix.getPrefixString() + wordRight)) {
+                prefixesLeft.add(prefix);
+            }
+        }
+
+        for (Prefix prefix : up) {
+            if (searchTree.isValidPrefix(prefix.getPrefixString() + wordDown)) {
+                prefixesUp.add(prefix);
+            }
+        }
     }
-
-    public boolean canBePlaced(Axis axis, char letter) {
-        if (directionsDiscovered.size() == 4)
-            return validLetters.getAllCharacters().contains(letter);
-
-        //TODO
-
-        return validLetters.contains(axis.getOtherAxis(), letter);
-    }
-
 }

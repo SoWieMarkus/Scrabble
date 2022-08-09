@@ -31,6 +31,19 @@ public class SearchBoard extends Board {
             if (field.getLetter() == null) continue;
             setAdjacentFields(field);
         }
+
+        for (Coordinate coordinate : coordinatesOfAdjacentFields) {
+            AdjacentSearchField searchField = (AdjacentSearchField) get(coordinate);
+            searchField.setPatternLeft(getPattern(Direction.LEFT, searchField.getStepsLeft(), coordinate));
+            searchField.setPatternUp(getPattern(Direction.UP, searchField.getStepsUp(), coordinate));
+        }
+    }
+
+    public void searchPrefix(Inventory inventory, SearchTree searchTree) {
+        for (Coordinate coordinate : coordinatesOfAdjacentFields) {
+            AdjacentSearchField adjacentSearchField = (AdjacentSearchField) get(coordinate);
+            adjacentSearchField.calculateValidPrefix(inventory, searchTree);
+        }
     }
 
     private void setAdjacentFields(Field field) {
@@ -56,6 +69,21 @@ public class SearchBoard extends Board {
             set(nextCoordinate, searchField);
             coordinatesOfAdjacentFields.add(nextCoordinate);
         }
+    }
+
+    private Pattern getPattern(Direction direction, int steps, Coordinate coordinate) {
+        Pattern pattern = new Pattern();
+        int currentStep = 0;
+        while(currentStep < steps){
+            SearchField searchField = get(coordinate);
+            if (searchField instanceof AdjacentSearchField) {
+                pattern.add(currentStep, ((AdjacentSearchField) searchField)
+                        .getValidLetters().get(direction.getAxis().getOtherAxis()));
+            }
+            currentStep++;
+            coordinate  = coordinate.getNextCoordinate(direction);
+        }
+        return pattern;
     }
 
     private int getAmountFreeFields(Direction direction, Coordinate coordinate) {

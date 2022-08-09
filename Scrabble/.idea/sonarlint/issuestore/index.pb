@@ -37,5 +37,3 @@ x
 Happ/src/main/java/markus/wieland/scrabble/game/letters/LetterConfig.java,b\2\b298cfc9cd03435fdb28e8c161146e40db527c42
 “
 capp/src/main/java/markus/wieland/scrabble/new_version/word_finder/new_versiob/JokerPossibility.java,6\f\6f50817f7a27b92693f1fc13cec6045cf8e4e2af
-o
-?app/src/main/java/markus/wieland/scrabble/helper/Direction.java,c\8\c88620ff9b8f4c9aaebea4eb0a5ff56ecca3afe3

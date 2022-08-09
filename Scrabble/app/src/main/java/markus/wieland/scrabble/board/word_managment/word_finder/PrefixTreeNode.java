@@ -16,16 +16,14 @@ public class PrefixTreeNode extends TreeNode {
         this.level = level;
     }
 
-
     public Set<Character> getPossibleCharacter(Set<Character> characters) {
         HashSet<Character> charactersOfNode = new HashSet<>();
+        if (characters == null) return getChildren().keySet();
+        if (getChildren().containsKey(Letters.JOKER)) charactersOfNode.add(Letters.JOKER);
+
         for (char letter : characters) {
             if (getChildren().containsKey(letter)) {
                 charactersOfNode.add(letter);
-                continue;
-            }
-            if (getChildren().containsKey(Letters.JOKER)) {
-                charactersOfNode.add(Letters.toLowerCase(letter));
             }
         }
         return charactersOfNode;

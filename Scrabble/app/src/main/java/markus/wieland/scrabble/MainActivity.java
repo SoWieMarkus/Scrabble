@@ -7,11 +7,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import lombok.AllArgsConstructor;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
+import markus.wieland.scrabble.board.word_managment.word_finder.Pattern;
+import markus.wieland.scrabble.board.word_managment.word_finder.Prefix;
 import markus.wieland.scrabble.board.word_managment.word_finder.PrefixTree;
 import markus.wieland.scrabble.board.word_managment.word_finder.WordFinder;
 import markus.wieland.scrabble.game.Inventory;
@@ -68,7 +71,7 @@ public class MainActivity extends DefaultActivity {
         letters.add(new Letter(1, 'A'));
         letters.add(new Letter(1, 'R'));
         letters.add(new Letter(1, 'Z'));
-        letters.add(new Letter(1, '?'));
+        letters.add(new Letter(1, 'T'));
         inventory.add(letters);
         BoardLayout boardLayout = fileReader.read("board_layouts/default_board_layout.json", BoardLayout.class);
         Board boardMatrix = new Board(boardLayout);
@@ -102,6 +105,9 @@ public class MainActivity extends DefaultActivity {
         Log.e("TIME2", (System.currentTimeMillis()-millis2)+"ms");
         int x = 0;
 
+        long millis4 = System.currentTimeMillis();
+        Set<Prefix> test = inventory.getPrefixTree().generatePrefix(3, new Pattern());
+        Log.e("TIME4", (System.currentTimeMillis()-millis4)+"ms");
         x = 0;
 
         /*Inventory inventory = new Inventory();

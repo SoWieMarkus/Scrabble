@@ -22,8 +22,11 @@ public class WordFinder {
 
     public List<String> getPossibleMoves(Activity activity) {
         this.searchBoard.calculatePossibleCharacters(inventory, SearchTree.getInstance(activity));
+        this.searchBoard.searchPrefix(inventory, SearchTree.getInstance(activity));
         return null;
     }
+
+
 
 
 }

@@ -10,6 +10,5 @@ public class Prefix {
 
     private String prefixString;
     private PrefixTreeNode prefixTreeNode;
-    private Coordinate startCoordinate;
 
 }

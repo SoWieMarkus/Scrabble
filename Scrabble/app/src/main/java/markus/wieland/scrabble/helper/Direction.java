@@ -15,15 +15,28 @@ public enum Direction {
     private final int vertical;
     private final int horizontal;
 
-    public boolean isNegativeDirection(){
+    public Axis getAxis() {
+        switch (this) {
+            case RIGHT:
+            case LEFT:
+                return Axis.HORIZONTAL;
+            case DOWN:
+            case UP:
+                return Axis.VERTICAL;
+            default:
+                throw new IllegalStateException();
+        }
+    }
+
+    public boolean isNegativeDirection() {
         return horizontal < 0 || vertical < 0;
     }
 
-    public boolean isHorizontal(){
+    public boolean isHorizontal() {
         return horizontal != 0;
     }
 
-    public boolean isVertical(){
+    public boolean isVertical() {
         return vertical != 0;
     }
 

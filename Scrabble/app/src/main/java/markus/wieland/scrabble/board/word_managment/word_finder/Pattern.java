@@ -15,6 +15,10 @@ public class Pattern {
         this.possibleCharactersAtPosition.put(index, characters);
     }
 
+    public Set<Character> get(int index) {
+        return possibleCharactersAtPosition.get(index);
+    }
+
     public boolean canLetterBePlaced(int index){
         Set<Character> characters = possibleCharactersAtPosition.get(index);
         if (characters == null) return true;

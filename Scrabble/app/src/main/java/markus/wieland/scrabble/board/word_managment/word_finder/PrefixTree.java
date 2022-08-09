@@ -5,8 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import markus.wieland.scrabble.game.letters.Letters;
 import markus.wieland.scrabble.helper.Tree;
 import markus.wieland.scrabble.helper.TreeNode;
+import markus.wieland.scrabble.old_versiob.validation.Characters;
 
 public class PrefixTree extends Tree {
 
@@ -31,19 +33,31 @@ public class PrefixTree extends Tree {
         }
     }
 
-    public Set<String> generatePrefix(int maxLength, HashMap<Integer, Set<Character>> pattern) {
-        if (getRoot().getPossibleCharacter())
+    public Set<Prefix> generatePrefix(int maxLength, Pattern pattern) {
+        Set<Prefix> generatedPrefix = new HashSet<>();
+        search(generatedPrefix, "", getRoot(), pattern, maxLength);
+        return generatedPrefix;
+    }
 
+    public void search(Set<Prefix> generatedPrefix, String currentString, PrefixTreeNode currentNode, Pattern pattern, int maxLength) {
+        generatedPrefix.add(new Prefix(currentString, currentNode));
 
-        for (Map.Entry<Character, TreeNode> entry : getRoot().getChildren().entrySet()) {
+        if (currentString.length() == maxLength) return;
+        if (!pattern.canLetterBePlaced(currentNode.getLevel())) return;
 
+        for (char letter : currentNode.getPossibleCharacter(pattern.get(currentNode.getLevel()))) {
+            PrefixTreeNode prefixTreeNode = currentNode.get(letter);
+            if (letter == Letters.JOKER) {
+                for (char jokerLetter : Letters.getAllPossibleLetters()){
+                    search(generatedPrefix, Character.toLowerCase(jokerLetter) + currentString, prefixTreeNode, pattern, maxLength);
+                }
+            }
+            search(generatedPrefix, letter + currentString, prefixTreeNode, pattern, maxLength);
         }
-
-        return new HashSet<>();
     }
 
     @Override
-    public PrefixTreeNode getRoot(){
+    public PrefixTreeNode getRoot() {
         return (PrefixTreeNode) super.getRoot();
     }
 

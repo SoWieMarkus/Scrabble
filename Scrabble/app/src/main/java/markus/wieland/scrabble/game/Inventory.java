@@ -35,7 +35,7 @@ public class Inventory {
         int amountOfLetters = 0;
         for (Letter letter : letters) {
             if (letter == null) continue;
-            if (letter.isJoker()) return Letters.ALL_POSSIBLE_LETTERS;
+            if (letter.isJoker()) return Letters.getAllPossibleLetters();
             amountOfLetters++;
         }
         char[] currentLetters = new char[amountOfLetters];

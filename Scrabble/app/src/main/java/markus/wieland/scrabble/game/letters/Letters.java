@@ -42,13 +42,23 @@ public class Letters {
         Collections.shuffle(this.listOfLetters);
     }
 
+    public static char[] getAllPossibleLetters(){
+        if (LETTERS_CONFIG.isEmpty()) initializePossibleLetters();
+        return ALL_POSSIBLE_LETTERS;
+    }
+
     public static void initialize(Activity activity) {
         FileReader fileReader = new FileReader(activity);
         LETTERS_CONFIG.clear();
         LETTERS_CONFIG.addAll(Arrays.asList(fileReader.read(LETTERS_CONFIG_FILE, LetterConfig[].class)));
+        initializePossibleLetters();
+    }
+
+    public static void initializePossibleLetters(){
         int index = 0;
         for (char i = 'A'; i <= 'Z'; i++) {
             ALL_POSSIBLE_LETTERS[index] = i;
+            index++;
         }
         ALL_POSSIBLE_LETTERS[26] = 'Ä';
         ALL_POSSIBLE_LETTERS[27] = 'Ö';
