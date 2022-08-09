@@ -46,6 +46,12 @@ public class SearchBoard extends Board {
         }
     }
 
+    public void searchWords(SearchTree searchTree) {
+        for (Coordinate coordinate : coordinatesOfAdjacentFields) {
+
+        }
+    }
+
     private void setAdjacentFields(Field field) {
         for (Direction direction : Objects.requireNonNull(Direction.class.getEnumConstants())) {
             Coordinate nextCoordinate = field.getCoordinate().getNextCoordinate(direction);
@@ -58,6 +64,7 @@ public class SearchBoard extends Board {
             }
 
             AdjacentSearchField searchField = new AdjacentSearchField(field);
+            searchField.setCoordinate(nextCoordinate);
             searchField.setStepsUp(getAmountFreeFields(Direction.UP, nextCoordinate));
             searchField.setStepsLeft(getAmountFreeFields(Direction.LEFT, nextCoordinate));
             searchField.setWordUp(getWord(Direction.UP, nextCoordinate));

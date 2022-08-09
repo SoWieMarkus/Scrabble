@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.scrabble.board.Field;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
+import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Direction;
@@ -77,17 +78,29 @@ public class AdjacentSearchField extends SearchField {
     }
 
     public void calculateValidPrefix(Inventory inventory, SearchTree searchTree) {
-        Set<Prefix> left = inventory.getPrefixTree().generatePrefix(stepsLeft, patternLeft);
-        Set<Prefix> up = inventory.getPrefixTree().generatePrefix(stepsUp, patternUp);
 
-        for (Prefix prefix : left) {
-            if (searchTree.isValidPrefix(prefix.getPrefixString() + wordRight)) {
+
+        if (stepsLeft > 0) {
+            Set<Prefix> left = inventory.getPrefixTree().generatePrefix(stepsLeft, patternLeft);
+            for (Prefix prefix : left) {
+                SearchTreeNode searchTreeNode = searchTree.search(prefix.getPrefixString() + wordLeft);
+                if (searchTreeNode == null) continue;
+                prefix.setSearchTreeNode(searchTreeNode);
+                prefix.setStartCoordinate(getCoordinate().getCoordinate(Direction.LEFT, prefix.getPrefixString().length()));
+                prefix.setEndCoordinateOfWholeCurrentWord(getCoordinate().getCoordinate(Direction.RIGHT, wordRight.length()));
                 prefixesLeft.add(prefix);
             }
         }
 
-        for (Prefix prefix : up) {
-            if (searchTree.isValidPrefix(prefix.getPrefixString() + wordDown)) {
+        if (stepsUp > 0) {
+            Set<Prefix> up = inventory.getPrefixTree().generatePrefix(stepsUp, patternUp);
+            for (Prefix prefix : up) {
+                SearchTreeNode searchTreeNode = searchTree.search(prefix.getPrefixString() + wordDown);
+                if (searchTreeNode == null) continue;
+                prefix.setSearchTreeNode(searchTreeNode);
+                prefix.setStartCoordinate(getCoordinate().getCoordinate(Direction.UP, prefix.getPrefixString().length()));
+                prefix.setEndCoordinateOfWholeCurrentWord(getCoordinate().getCoordinate(Direction.DOWN, wordDown.length()));
+
                 prefixesUp.add(prefix);
             }
         }
