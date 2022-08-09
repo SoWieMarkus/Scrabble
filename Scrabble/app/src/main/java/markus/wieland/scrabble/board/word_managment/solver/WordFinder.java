@@ -13,17 +13,19 @@ import markus.wieland.scrabble.game.Inventory;
 public class WordFinder {
 
     private final SearchBoard searchBoard;
-    private Inventory inventory;
+    private final Inventory inventory;
 
     public WordFinder(Board board, Inventory inventory) {
         this.searchBoard = new SearchBoard(board);
         this.inventory = inventory;
     }
 
-    public List<String> getPossibleMoves(Activity activity) {
-        this.searchBoard.calculatePossibleCharacters(inventory, SearchTree.getInstance(activity));
-        this.searchBoard.searchPrefix(inventory, SearchTree.getInstance(activity));
-        return null;
+    public List<Move> getPossibleMoves(Activity activity) {
+        SearchTree searchTree = SearchTree.getInstance(activity);
+        this.searchBoard.calculatePossibleCharacters(inventory, searchTree);
+        this.searchBoard.searchPrefix(inventory, searchTree);
+        List<Move> moves = this.searchBoard.searchWords(searchTree);
+        return moves;
     }
 
 

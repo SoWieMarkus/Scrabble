@@ -1,6 +1,8 @@
 package markus.wieland.scrabble.board.word_managment.solver;
 
-public class ValidMove {
+public class Move {
+
+    private int score;
 
 
 }

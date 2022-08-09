@@ -46,10 +46,12 @@ public class SearchBoard extends Board {
         }
     }
 
-    public void searchWords(SearchTree searchTree) {
+    public List<Move> searchWords(SearchTree searchTree) {
+        List<Move> moves = new ArrayList<>();
         for (Coordinate coordinate : coordinatesOfAdjacentFields) {
 
         }
+        return moves;
     }
 
     private void setAdjacentFields(Field field) {
