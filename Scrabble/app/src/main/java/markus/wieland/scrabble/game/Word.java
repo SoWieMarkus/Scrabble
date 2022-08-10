@@ -19,9 +19,15 @@ public class Word {
             return;
         }
 
-        Field firstField =
+        Field firstField = fields.get(0);
+        boolean append = (field.getCoordinate().getX() >= firstField.getCoordinate().getX()) &&
+                (field.getCoordinate().getX() != firstField.getCoordinate().getX() || field.getCoordinate().getY() >= firstField.getCoordinate().getY());
 
-
+        if (append) {
+            fields.add(field);
+            return;
+        }
+        fields.add(0, field);
     }
 
     public int getScore() {
