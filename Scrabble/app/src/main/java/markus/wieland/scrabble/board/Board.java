@@ -4,6 +4,7 @@ import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.board.word_managment.solver.AdjacentSearchField;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
+import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
 import markus.wieland.scrabble.helper.Matrix;
@@ -65,4 +66,6 @@ public class Board extends Matrix<Field> {
             }
         }
     }
+
+
 }

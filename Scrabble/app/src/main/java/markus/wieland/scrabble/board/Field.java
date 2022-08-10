@@ -19,4 +19,8 @@ public class Field {
         this.coordinate = coordinate;
     }
 
+    public SpecialBlockType getSpecialBlockTypeIfNotConcrete() {
+        if (concrete) return null;
+        return specialBlockType;
+    }
 }
