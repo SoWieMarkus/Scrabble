@@ -5,6 +5,7 @@ import java.util.List;
 
 import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.board.word_managment.solver.AdjacentSearchField;
+import markus.wieland.scrabble.board.word_managment.solver.Move;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.game.Word;
@@ -13,6 +14,7 @@ import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
 import markus.wieland.scrabble.helper.Matrix;
 import markus.wieland.scrabble.board.layout.BoardLayout;
+import markus.wieland.scrabble.helper.Range;
 
 public class Board extends Matrix<Field> {
 
@@ -79,7 +81,7 @@ public class Board extends Matrix<Field> {
 
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
-                
+
                 Field verticalLetter = get( new Coordinate(j, i));
                 Field horizontalLetter = get(new Coordinate(i, j));
 
@@ -104,6 +106,38 @@ public class Board extends Matrix<Field> {
         }
 
         return extractedWords;
+    }
+
+    public List<Word> getWords(Range range) {
+        List<Word> words = new ArrayList<>();
+
+        Axis axis = range.getAxis();
+        Word word = getWord(range.getStartCoordinate(), axis);
+        if (word != null) words.add(word);
+        for (Coordinate coordinate : range.getListOfCoordinates()) {
+            Field field = get(coordinate);
+            if (field.isConcrete()) continue;
+            Word adjacentWord = getWord(coordinate, axis.getOtherAxis());
+            if (adjacentWord != null) words.add(adjacentWord);
+        }
+        return words;
+    }
+
+    public Word getWord(Coordinate coordinate, Axis axis) {
+        Coordinate currentCoordinate = coordinate;
+        while (getDimension().isInsideRange(currentCoordinate) && get(currentCoordinate).getLetter() != null) {
+            currentCoordinate = currentCoordinate.getNextCoordinate(axis.getDirectionNegative());
+        }
+
+        Word word = new Word();
+        currentCoordinate = currentCoordinate.getNextCoordinate(axis.getDirectionPositive());
+        while (getDimension().isInsideRange(currentCoordinate) && get(currentCoordinate).getLetter() != null) {
+            word.add(get(currentCoordinate));
+            currentCoordinate = currentCoordinate.getNextCoordinate(axis.getDirectionPositive());
+        }
+
+        if (word.getLength() > 1) return word;
+        return null;
     }
 
 

@@ -16,11 +16,14 @@ import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.solver.Pattern;
 import markus.wieland.scrabble.board.word_managment.solver.Prefix;
 import markus.wieland.scrabble.board.word_managment.solver.WordFinder;
+import markus.wieland.scrabble.game.Dictionary;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.Word;
+import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.FileReader;
+import markus.wieland.scrabble.helper.Range;
 import markus.wieland.scrabble.new_version.Scrabble;
 import markus.wieland.scrabble.board.layout.BoardLayout;
 
@@ -76,19 +79,32 @@ public class MainActivity extends DefaultActivity {
         BoardLayout boardLayout = fileReader.read("board_layouts/default_board_layout.json", BoardLayout.class);
         Board boardMatrix = new Board(boardLayout);
         boardMatrix.get(new Coordinate(7, 7)).setLetter(new Letter(2, 'L'));
+        boardMatrix.get(new Coordinate(7, 7)).setConcrete(true);
         boardMatrix.get(new Coordinate(7, 8)).setLetter(new Letter(1, 'U'));
+        boardMatrix.get(new Coordinate(7, 8)).setConcrete(true);
         boardMatrix.get(new Coordinate(7, 9)).setLetter(new Letter(4, 'C'));
+        boardMatrix.get(new Coordinate(7, 9)).setConcrete(true);
         boardMatrix.get(new Coordinate(7, 10)).setLetter(new Letter(1, 'I'));
+        boardMatrix.get(new Coordinate(7, 10)).setConcrete(true);
         boardMatrix.get(new Coordinate(7, 11)).setLetter(new Letter(1, 'E'));
+        boardMatrix.get(new Coordinate(7, 11)).setConcrete(true);
 
         boardMatrix.get(new Coordinate(6, 8)).setLetter(new Letter(4, 'K'));
+        boardMatrix.get(new Coordinate(6, 8)).setConcrete(true);
         boardMatrix.get(new Coordinate(5, 8)).setLetter(new Letter(4, 'R'));
+        boardMatrix.get(new Coordinate(5, 8)).setConcrete(true);
         boardMatrix.get(new Coordinate(5, 9)).setLetter(new Letter(4, 'U'));
+        boardMatrix.get(new Coordinate(5, 9)).setConcrete(true);
         boardMatrix.get(new Coordinate(4, 8)).setLetter(new Letter(4, 'A'));
+        boardMatrix.get(new Coordinate(4, 8)).setConcrete(true);
         boardMatrix.get(new Coordinate(4, 9)).setLetter(new Letter(4, 'R'));
+        boardMatrix.get(new Coordinate(4, 9)).setConcrete(true);
         boardMatrix.get(new Coordinate(4, 10)).setLetter(new Letter(4, 'M'));
+        boardMatrix.get(new Coordinate(4, 10)).setConcrete(true);
         boardMatrix.get(new Coordinate(3, 8)).setLetter(new Letter(4, 'M'));
+        boardMatrix.get(new Coordinate(3, 8)).setConcrete(true);
         boardMatrix.get(new Coordinate(8, 8)).setLetter(new Letter(4, 'S'));
+        boardMatrix.get(new Coordinate(8, 8)).setConcrete(true);
 
         long millis = System.currentTimeMillis();
         WordFinder wordFinder = new WordFinder(boardMatrix, inventory);
@@ -110,11 +126,37 @@ public class MainActivity extends DefaultActivity {
         Log.e("TIME4", (System.currentTimeMillis()-millis4)+"ms");
         x = 0;
 
-        long millis5 = System.currentTimeMillis();
-        List<Word> tests = boardMatrix.getWords();
-        Log.e("TIME5", (System.currentTimeMillis()-millis4)+"ms");
+
+
+        Range range = new Range();
+        range.update(new Coordinate(5,10));
+        range.update(new Coordinate(5,11));
+
+        boardMatrix.get(new Coordinate(5,10)).setLetter(new Letter(3,'Z'));
+        boardMatrix.get(new Coordinate(5,11)).setLetter(new Letter(3,'Z'));
+        long millis6 = System.currentTimeMillis();
+        List<Word> words = boardMatrix.getWords(range);
+        Log.e("TIME6", (System.currentTimeMillis()-millis4)+"ms");
+        int score = 0;
+
+        for (Word word : words) {
+            score += word.getScore();
+        }
+        Log.e("SCORE", score + "");
         x = 0;
 
+        Dictionary dictionary = new Dictionary();
+        dictionary.save(words);
+
+
+
+        long millis5 = System.currentTimeMillis();
+        List<Word> tests = boardMatrix.getWords();
+        List<Word> newWords = dictionary.filterNewWords(tests);
+
+
+        Log.e("TIME5", (System.currentTimeMillis()-millis4)+"ms");
+        x = 0;
         /*Inventory inventory = new Inventory();
         List<Letter> letters = new ArrayList<>();
         letters.add(new Letter(1, 'H'));

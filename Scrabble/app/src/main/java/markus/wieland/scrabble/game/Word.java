@@ -10,11 +10,9 @@ import markus.wieland.scrabble.board.Field;
 public class Word {
 
     private final List<Field> fields;
-    private String id;
 
     public Word() {
         this.fields = new ArrayList<>();
-        this.id = "";
     }
 
     public void add(Field field) {
@@ -27,10 +25,9 @@ public class Word {
             }
         }
         fields.add(index, field);
-        this.id = buildId();
     }
 
-    public int getLength(){
+    public int getLength() {
         return this.fields.size();
     }
 
@@ -40,19 +37,21 @@ public class Word {
         int amountDoubleWord = 0;
         for (Field field : fields) {
             int scoreOfField = field.getLetter().getScore();
-            switch (field.getSpecialBlockTypeIfNotConcrete()) {
-                case LETTER_TIMES_THREE:
-                    scoreOfField *= 3;
-                    break;
-                case LETTER_TIMES_TWO:
-                    scoreOfField *= 2;
-                    break;
-                case WORD_TIMES_TWO:
-                    amountDoubleWord++;
-                    break;
-                case WORD_TIMES_THREE:
-                    amountTripleWord++;
-                    break;
+            if (field.getSpecialBlockTypeIfNotConcrete() != null) {
+                switch (field.getSpecialBlockTypeIfNotConcrete()) {
+                    case LETTER_TIMES_THREE:
+                        scoreOfField *= 3;
+                        break;
+                    case LETTER_TIMES_TWO:
+                        scoreOfField *= 2;
+                        break;
+                    case WORD_TIMES_TWO:
+                        amountDoubleWord++;
+                        break;
+                    case WORD_TIMES_THREE:
+                        amountTripleWord++;
+                        break;
+                }
             }
             score += scoreOfField;
         }
@@ -75,7 +74,7 @@ public class Word {
     }
 
     public String getId() {
-        return id;
+        return buildId();
     }
 
     @Override

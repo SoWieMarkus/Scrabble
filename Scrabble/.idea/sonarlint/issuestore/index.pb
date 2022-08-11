@@ -43,8 +43,6 @@ j
 :app/src/main/java/markus/wieland/scrabble/game/Letter.java,3\8\38723ecb1acec59390040463a506bd55aad951e8
 ‚
 Rapp/src/main/java/markus/wieland/scrabble/board/word_managment/SearchTreeNode.java,9\0\90afb7c7c91cc0ebabce225a9615cc77fd5112ff
-j
-:app/src/main/java/markus/wieland/scrabble/helper/Tree.java,d\a\da22c2b3e41b89bc33f55702121e758b85059dc2
 s
 Capp/src/main/java/markus/wieland/scrabble/game/letters/Letters.java,c\9\c946f31c0cfdfbeabb5c4e4ee28202f3cb788971
 n
