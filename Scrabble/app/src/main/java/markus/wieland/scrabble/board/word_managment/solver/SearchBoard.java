@@ -49,6 +49,10 @@ public class SearchBoard extends Board {
     public List<Move> searchWords(SearchTree searchTree) {
         List<Move> moves = new ArrayList<>();
         for (Coordinate coordinate : coordinatesOfAdjacentFields) {
+            AdjacentSearchField searchField = (AdjacentSearchField) get(coordinate);
+            Coordinate nextCoordinate = coordinate.getNextCoordinate(Direction.RIGHT);
+            Coordinate nextButOneCoordinate = nextCoordinate.getNextCoordinate(Direction.RIGHT);
+
 
         }
         return moves;
@@ -132,6 +136,7 @@ public class SearchBoard extends Board {
         return (SearchField) super.get(coordinate);
     }
 
+    @Override
     protected void initialize() {
         for (Coordinate coordinate : getDimension()) {
             SearchField field = new SearchField(coordinate);

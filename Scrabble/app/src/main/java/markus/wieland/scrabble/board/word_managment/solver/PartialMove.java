@@ -12,6 +12,7 @@ public class PartialMove {
 
     private Letter letter;
     private Coordinate coordinate;
+    private boolean concrete;
 
     public void execute(Board board) {
         board.get(coordinate).setLetter(letter);

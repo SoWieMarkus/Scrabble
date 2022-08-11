@@ -82,7 +82,7 @@ public class Board extends Matrix<Field> {
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
 
-                Field verticalLetter = get( new Coordinate(j, i));
+                Field verticalLetter = get(new Coordinate(j, i));
                 Field horizontalLetter = get(new Coordinate(i, j));
 
                 if (verticalLetter.getLetter() == null) {

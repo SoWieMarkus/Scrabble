@@ -55,5 +55,3 @@ o
 ?app/src/main/java/markus/wieland/scrabble/helper/Direction.java,c\8\c88620ff9b8f4c9aaebea4eb0a5ff56ecca3afe3
 â
 Yapp/src/main/java/markus/wieland/scrabble/board/word_managment/solver/PrefixTreeNode.java,5\6\5601c410bd2a8b99888c28eea7903ddc8886e23d
-Å
-Qapp/src/main/java/markus/wieland/scrabble/board/word_managment/solver/Prefix.java,0\e\0e700cc54da14e78239bfb772aae428fd6a6ff95
