@@ -4,13 +4,13 @@
     android:layout_height="match_parent">
 
     <markus.wieland.scrabble.new_version.views.SpecialBlockView
-        android:id="@+id/dots"
+        android:id="@+id/layout_field_view_special_block"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
     <markus.wieland.scrabble.new_version.views.LetterView
-        android:id="@+id/circle"
+        android:id="@+id/layout_field_view_letter_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>

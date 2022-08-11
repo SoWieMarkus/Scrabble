@@ -18,6 +18,7 @@ import markus.wieland.scrabble.board.word_managment.solver.Prefix;
 import markus.wieland.scrabble.board.word_managment.solver.WordFinder;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.game.Letter;
+import markus.wieland.scrabble.game.Word;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.FileReader;
 import markus.wieland.scrabble.new_version.Scrabble;
@@ -107,6 +108,11 @@ public class MainActivity extends DefaultActivity {
         long millis4 = System.currentTimeMillis();
         Set<Prefix> test = inventory.getPrefixTree().generatePrefix(3, new Pattern());
         Log.e("TIME4", (System.currentTimeMillis()-millis4)+"ms");
+        x = 0;
+
+        long millis5 = System.currentTimeMillis();
+        List<Word> tests = boardMatrix.getWords();
+        Log.e("TIME5", (System.currentTimeMillis()-millis4)+"ms");
         x = 0;
 
         /*Inventory inventory = new Inventory();

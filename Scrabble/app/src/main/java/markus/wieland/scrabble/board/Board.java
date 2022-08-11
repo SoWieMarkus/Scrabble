@@ -1,9 +1,13 @@
 package markus.wieland.scrabble.board;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.board.word_managment.solver.AdjacentSearchField;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
+import markus.wieland.scrabble.game.Word;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
@@ -66,6 +70,43 @@ public class Board extends Matrix<Field> {
             }
         }
     }
+
+    public List<Word> getWords(){
+        List<Word> extractedWords = new ArrayList<>();
+
+        Word horizontal = new Word();
+        Word vertical = new Word();
+
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                
+                Field verticalLetter = get( new Coordinate(j, i));
+                Field horizontalLetter = get(new Coordinate(i, j));
+
+                if (verticalLetter.getLetter() == null) {
+                    if (vertical.getLength() > 1) {
+                        extractedWords.add(vertical);
+                    }
+                    vertical = new Word();
+                } else {
+                    vertical.add(verticalLetter);
+                }
+
+                if (horizontalLetter.getLetter() == null) {
+                    if (horizontal.getLength() > 1) {
+                        extractedWords.add(horizontal);
+                    }
+                    horizontal = new Word();
+                } else {
+                    horizontal.add(horizontalLetter);
+                }
+            }
+        }
+
+        return extractedWords;
+    }
+
+
 
 
 }

@@ -1,5 +1,7 @@
 package markus.wieland.scrabble.game;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,26 +10,28 @@ import markus.wieland.scrabble.board.Field;
 public class Word {
 
     private final List<Field> fields;
+    private String id;
 
     public Word() {
         this.fields = new ArrayList<>();
+        this.id = "";
     }
 
     public void add(Field field) {
-        if (fields.isEmpty()) {
-            fields.add(field);
-            return;
+        int index = 0;
+        if (!fields.isEmpty()) {
+            Field firstField = fields.get(0);
+            if ((field.getCoordinate().getX() >= firstField.getCoordinate().getX()) &&
+                    (field.getCoordinate().getX() != firstField.getCoordinate().getX() || field.getCoordinate().getY() >= firstField.getCoordinate().getY())) {
+                index = fields.size();
+            }
         }
+        fields.add(index, field);
+        this.id = buildId();
+    }
 
-        Field firstField = fields.get(0);
-        boolean append = (field.getCoordinate().getX() >= firstField.getCoordinate().getX()) &&
-                (field.getCoordinate().getX() != firstField.getCoordinate().getX() || field.getCoordinate().getY() >= firstField.getCoordinate().getY());
-
-        if (append) {
-            fields.add(field);
-            return;
-        }
-        fields.add(0, field);
+    public int getLength(){
+        return this.fields.size();
     }
 
     public int getScore() {
@@ -56,6 +60,32 @@ public class Word {
         if (amountTripleWord > 0) score *= (amountTripleWord * 3);
         return score;
 
+    }
+
+    private String buildId() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Field field : fields) {
+            stringBuilder.append(field.getLetter().getValue())
+                    .append("/")
+                    .append(field.getCoordinate().getX())
+                    .append("/")
+                    .append(field.getCoordinate().getY());
+        }
+        return stringBuilder.toString();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    @NonNull
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Field field : fields) {
+            stringBuilder.append(field.getLetter().getValue());
+        }
+        return stringBuilder.toString();
     }
 
 }

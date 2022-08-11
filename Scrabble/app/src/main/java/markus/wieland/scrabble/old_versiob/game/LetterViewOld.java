@@ -39,7 +39,7 @@ public class LetterViewOld extends ConstraintLayout implements View.OnTouchListe
     protected void initializeView() {
         setOnTouchListener(this);
         setOnDragListener(this);
-        LayoutInflater.from(getContext()).inflate(R.layout.layout_letter_view, this);
+        LayoutInflater.from(getContext()).inflate(R.layout.layout_field_view, this);
         //background = findViewById(R.id.layout_letter_view_background);
         //value = findViewById(R.id.layout_letter_view_value);
     }

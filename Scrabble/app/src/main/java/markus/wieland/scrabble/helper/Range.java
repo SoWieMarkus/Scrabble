@@ -36,21 +36,27 @@ public class Range {
         }
     }
 
-    public List<Coordinate> getListOfCoordinates(){
+    public Axis getAxis(){
         boolean isXDirection = startCoordinate.getX() == endCoordinate.getX();
         boolean isYDirection = startCoordinate.getY() == endCoordinate.getY();
 
-        if (!isXDirection && !isYDirection) throw new IllegalStateException();
+        if (isXDirection) return Axis.VERTICAL;
+        if (isYDirection) return Axis.HORIZONTAL;
+        throw new IllegalStateException();
+    }
 
-        int staticCoordinate = isXDirection ? startCoordinate.getX() : startCoordinate.getY();
-        int min = isXDirection ? Math.min(startCoordinate.getY(), endCoordinate.getY())
+    public List<Coordinate> getListOfCoordinates(){
+        Axis axis = getAxis();
+
+        int staticCoordinate = axis == Axis.VERTICAL ? startCoordinate.getX() : startCoordinate.getY();
+        int min = axis == Axis.VERTICAL ? Math.min(startCoordinate.getY(), endCoordinate.getY())
                 : Math.min(startCoordinate.getX(), endCoordinate.getX());
-        int max = isXDirection ? Math.max(startCoordinate.getY(), endCoordinate.getY())
+        int max = axis == Axis.VERTICAL ? Math.max(startCoordinate.getY(), endCoordinate.getY())
                 : Math.max(startCoordinate.getX(), endCoordinate.getX());
 
         List<Coordinate> coordinates = new ArrayList<>();
         for (int i = min; i <= max; i++) {
-            if (isXDirection){
+            if (axis == Axis.VERTICAL){
                 coordinates.add(new Coordinate(staticCoordinate, i));
                 continue;
             }
