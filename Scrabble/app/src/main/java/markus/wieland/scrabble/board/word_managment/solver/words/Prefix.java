@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.board.word_managment.solver;
+package markus.wieland.scrabble.board.word_managment.solver.words;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

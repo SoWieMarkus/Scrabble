@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.board.word_managment.solver;
+package markus.wieland.scrabble.board.word_managment.solver.board;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,8 @@ import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.Field;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
+import markus.wieland.scrabble.board.word_managment.solver.Move;
+import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.helper.Axis;

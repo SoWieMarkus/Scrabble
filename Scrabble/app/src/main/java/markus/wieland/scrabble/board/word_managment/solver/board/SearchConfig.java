@@ -1,7 +1,8 @@
-package markus.wieland.scrabble.board.word_managment.solver;
+package markus.wieland.scrabble.board.word_managment.solver.board;
 
 import lombok.Getter;
 import lombok.Setter;
+import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
 
 @Setter
 @Getter

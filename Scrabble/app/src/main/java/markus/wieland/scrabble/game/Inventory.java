@@ -3,7 +3,7 @@ package markus.wieland.scrabble.game;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.scrabble.board.word_managment.solver.PrefixTree;
+import markus.wieland.scrabble.board.word_managment.solver.words.PrefixTree;
 import markus.wieland.scrabble.game.letters.Letters;
 
 @Getter

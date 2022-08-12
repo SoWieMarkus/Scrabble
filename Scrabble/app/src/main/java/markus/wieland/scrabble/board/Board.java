@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import markus.wieland.scrabble.board.layout.BoardLayoutField;
-import markus.wieland.scrabble.board.word_managment.solver.AdjacentSearchField;
-import markus.wieland.scrabble.board.word_managment.solver.Move;
+import markus.wieland.scrabble.board.word_managment.solver.board.AdjacentSearchField;
 import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.game.Word;

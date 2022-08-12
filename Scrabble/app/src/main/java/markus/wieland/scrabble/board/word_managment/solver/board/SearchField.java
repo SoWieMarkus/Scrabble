@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.board.word_managment.solver;
+package markus.wieland.scrabble.board.word_managment.solver.board;
 
 import markus.wieland.scrabble.board.Field;
 import markus.wieland.scrabble.helper.Coordinate;

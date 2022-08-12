@@ -7,6 +7,7 @@ import java.util.List;
 import lombok.Getter;
 import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
+import markus.wieland.scrabble.board.word_managment.solver.board.SearchBoard;
 import markus.wieland.scrabble.game.Inventory;
 
 @Getter

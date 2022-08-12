@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.board.word_managment.solver;
+package markus.wieland.scrabble.board.word_managment.solver.board;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,6 +8,9 @@ import lombok.Setter;
 import markus.wieland.scrabble.board.Field;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
+import markus.wieland.scrabble.board.word_managment.solver.words.ValidLetters;
+import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
+import markus.wieland.scrabble.board.word_managment.solver.words.Prefix;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Direction;
