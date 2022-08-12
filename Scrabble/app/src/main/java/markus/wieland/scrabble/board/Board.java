@@ -8,6 +8,7 @@ import markus.wieland.scrabble.board.word_managment.solver.board.AdjacentSearchF
 import markus.wieland.scrabble.game.letters.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.game.letters.Word;
+import markus.wieland.scrabble.game.state.GameState;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
@@ -20,6 +21,13 @@ public class Board extends Matrix<Field> {
     public Board(Dimension dimension) {
         super(dimension);
         initialize();
+    }
+
+    public Board(GameState gameState) {
+        super(gameState.getDimension());
+        for (Coordinate coordinate : getDimension().getAllCoordinates()) {
+            set(coordinate, gameState.getFields()[coordinate.getX()][coordinate.getY()]);
+        }
     }
 
     public Board(BoardLayout boardLayout) {
