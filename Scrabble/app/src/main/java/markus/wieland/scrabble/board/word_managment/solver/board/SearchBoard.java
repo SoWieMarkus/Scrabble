@@ -11,7 +11,7 @@ import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
 import markus.wieland.scrabble.board.word_managment.solver.Move;
 import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
 import markus.wieland.scrabble.game.Inventory;
-import markus.wieland.scrabble.game.Letter;
+import markus.wieland.scrabble.game.letters.Letter;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Direction;

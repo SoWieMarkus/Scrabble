@@ -1,4 +1,4 @@
-package markus.wieland.scrabble.game;
+package markus.wieland.scrabble.game.letters;
 
 import androidx.annotation.NonNull;
 

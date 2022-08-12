@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.scrabble.game.Letter;
 import markus.wieland.scrabble.helper.FileReader;
 
 @Getter

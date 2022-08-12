@@ -2,7 +2,7 @@ package markus.wieland.scrabble.board;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.scrabble.game.Letter;
+import markus.wieland.scrabble.game.letters.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
 import markus.wieland.scrabble.helper.Coordinate;
 

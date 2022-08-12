@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import markus.wieland.scrabble.game.letters.Word;
+
 public class Dictionary {
 
     private final HashMap<String, Word> words;

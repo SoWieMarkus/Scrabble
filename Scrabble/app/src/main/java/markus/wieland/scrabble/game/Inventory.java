@@ -4,6 +4,7 @@ import java.util.List;
 
 import lombok.Getter;
 import markus.wieland.scrabble.board.word_managment.solver.words.PrefixTree;
+import markus.wieland.scrabble.game.letters.Letter;
 import markus.wieland.scrabble.game.letters.Letters;
 
 @Getter

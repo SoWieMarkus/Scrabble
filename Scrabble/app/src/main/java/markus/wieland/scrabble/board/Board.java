@@ -5,9 +5,9 @@ import java.util.List;
 
 import markus.wieland.scrabble.board.layout.BoardLayoutField;
 import markus.wieland.scrabble.board.word_managment.solver.board.AdjacentSearchField;
-import markus.wieland.scrabble.game.Letter;
+import markus.wieland.scrabble.game.letters.Letter;
 import markus.wieland.scrabble.game.SpecialBlockType;
-import markus.wieland.scrabble.game.Word;
+import markus.wieland.scrabble.game.letters.Word;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Coordinate;
 import markus.wieland.scrabble.helper.Dimension;
