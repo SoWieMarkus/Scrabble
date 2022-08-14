@@ -49,7 +49,7 @@ public class MainActivity extends DefaultActivity {
 
         FileReader fileReader = new FileReader(this);
 
-        SearchTree searchTree = SearchTree.getInstance(this);
+        SearchTree.initialize(this);
 
         /*MatrixView matrixView = findViewById(R.id.scrabble_view_fields);
         MatrixView matrixView2 = findViewById(R.id.scrabble_view_letters);

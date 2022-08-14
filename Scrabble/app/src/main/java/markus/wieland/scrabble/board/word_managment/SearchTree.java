@@ -11,10 +11,14 @@ public class SearchTree extends Tree {
 
     public static SearchTree getInstance(Activity activity) {
         if (!instance.isInitialized()) {
-            FileReader fileReader = new FileReader(activity);
-            instance.addAll(fileReader.read("words.txt").split("\r\n"));
+            initialize(activity);
         }
         return instance;
+    }
+
+    public static void initialize(Activity activity) {
+        FileReader fileReader = new FileReader(activity);
+        instance.addAll(fileReader.read("words.txt").split("\r\n"));
     }
 
     private SearchTree() {
