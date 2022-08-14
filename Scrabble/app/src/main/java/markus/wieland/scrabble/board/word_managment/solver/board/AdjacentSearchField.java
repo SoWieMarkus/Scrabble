@@ -1,6 +1,8 @@
 package markus.wieland.scrabble.board.word_managment.solver.board;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import lombok.Getter;
@@ -12,6 +14,7 @@ import markus.wieland.scrabble.board.word_managment.solver.words.ValidLetters;
 import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
 import markus.wieland.scrabble.board.word_managment.solver.words.prefix.Prefix;
 import markus.wieland.scrabble.game.Inventory;
+import markus.wieland.scrabble.game.letters.Word;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Direction;
 
@@ -23,10 +26,8 @@ public class AdjacentSearchField extends SearchField {
     private int stepsUp;
     private int stepsLeft;
 
-    private SearchConfig searchConfigLeft;
-    private SearchConfig searchConfigRight;
-    private SearchConfig searchConfigUp;
-    private SearchConfig searchConfigDown;
+    private final HashMap<Direction, SearchConfig> searchConfigs;
+    private final HashMap<Axis, HashSet<Prefix>> validPrefix;
 
     private String wordLeft;
     private String wordUp;
@@ -46,9 +47,21 @@ public class AdjacentSearchField extends SearchField {
 
     public AdjacentSearchField(Field field) {
         super(field.getCoordinate());
+        this.searchConfigs = new HashMap<>();
+        this.validPrefix = new HashMap<>();
+
+        for (Direction direction : Objects.requireNonNull(Direction.class.getEnumConstants())) {
+            searchConfigs.put(direction, new SearchConfig());
+        }
+
+        for (Axis axis: Objects.requireNonNull(Axis.class.getEnumConstants())) {
+            validPrefix.put(axis, new HashSet<>());
+        }
+
         this.validLetters = new ValidLetters();
         this.directionsDiscovered = new HashSet<>();
         this.stepsLeft = 0;
+
         this.patternLeft = new Pattern();
         this.patternUp = new Pattern();
         this.prefixesLeft = new HashSet<>();
@@ -68,6 +81,14 @@ public class AdjacentSearchField extends SearchField {
 
     public void add(Axis axis, char letter) {
         validLetters.add(axis, letter);
+    }
+
+    public SearchConfig getSearchConfig(Direction direction) {
+        return searchConfigs.get(direction);
+    }
+
+    public void setWord(Direction direction, String word) {
+        Objects.requireNonNull(searchConfigs.get(direction)).setWord(word);
     }
 
     public String getWord(Direction direction) {

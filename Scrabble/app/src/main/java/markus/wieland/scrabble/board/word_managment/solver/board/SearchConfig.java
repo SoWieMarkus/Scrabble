@@ -12,4 +12,9 @@ public class SearchConfig {
     private int steps;
     private Pattern pattern;
 
+    public SearchConfig() {
+        this.word = "";
+        this.steps = 0;
+    }
+
 }

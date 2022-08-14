@@ -75,10 +75,12 @@ public class SearchBoard extends Board {
             searchField.setCoordinate(nextCoordinate);
             searchField.setStepsUp(getAmountFreeFields(Direction.UP, nextCoordinate));
             searchField.setStepsLeft(getAmountFreeFields(Direction.LEFT, nextCoordinate));
+
             searchField.setWordUp(getWord(Direction.UP, nextCoordinate));
             searchField.setWordLeft(getWord(Direction.LEFT, nextCoordinate));
             searchField.setWordDown(getWord(Direction.DOWN, nextCoordinate));
             searchField.setWordRight(getWord(Direction.RIGHT, nextCoordinate));
+
             searchField.addDirectionDiscovered(direction);
 
             set(nextCoordinate, searchField);

@@ -1,0 +1,34 @@
+
+œ
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§ÂË¤ûÿÿÿÿ
+œ
+java:S1186+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(îî¯Àÿÿÿÿÿ
+W
+java:S1854ˆ";Remove this useless assignment to local variable "millis6".(ÒÊêşÿÿÿÿ
+P
+java:S1854~"5Remove this useless assignment to local variable "x".(–İ…Èùÿÿÿÿ
+S
+java:S1854|"8Remove this useless assignment to local variable "test".(¾¹úŸıÿÿÿÿ
+Q
+java:S1854"5Remove this useless assignment to local variable "x".(–İ…Èùÿÿÿÿ
+X
+java:S1854š"<Remove this useless assignment to local variable "newWords".(¤åº¾ıÿÿÿÿ
+R
+java:S1854˜";Remove this useless assignment to local variable "millis5".(ıû¿¢
+Q
+java:S1854‘"5Remove this useless assignment to local variable "x".(–İ…Èùÿÿÿÿ
+V	java:S1256"<This block of commented-out lines of code should be removed.(ûŸñŸùÿÿÿÿ
+A
+java:S1481y"&Remove this unused "x" local variable.(¾„ëüÿÿÿÿ
+D
+java:S1481|")Remove this unused "test" local variable.(¾¹úŸıÿÿÿÿ
+H
+java:S1481ˆ",Remove this unused "millis6" local variable.(ÒÊêşÿÿÿÿ
+C
+java:S1481˜",Remove this unused "millis5" local variable.(ıû¿¢
+I
+java:S1481š"-Remove this unused "newWords" local variable.(¤åº¾ıÿÿÿÿ
+R	java:S125Ÿ"<This block of commented-out lines of code should be removed.(µÑÏÔ
+W	java:S125©"<This block of commented-out lines of code should be removed.(“¶°†şÿÿÿÿ
+R	java:S125¸"<This block of commented-out lines of code should be removed.(¨Õˆ­
+W	java:S125¤"<This block of commented-out lines of code should be removed.(±°ïšÿÿÿÿÿ
