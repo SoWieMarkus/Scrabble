@@ -2,6 +2,11 @@ package markus.wieland.scrabble.board.word_managment;
 
 import android.app.Activity;
 
+import java.util.List;
+
+import markus.wieland.scrabble.board.Board;
+import markus.wieland.scrabble.board.word_managment.solver.words.prefix.Prefix;
+import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.FileReader;
 import markus.wieland.scrabble.helper.Tree;
 
@@ -79,5 +84,6 @@ public class SearchTree extends Tree {
         SearchTreeNode finalNode = search(searchTreeNode, word);
         return finalNode != null && finalNode.isTerminal();
     }
+
 
 }

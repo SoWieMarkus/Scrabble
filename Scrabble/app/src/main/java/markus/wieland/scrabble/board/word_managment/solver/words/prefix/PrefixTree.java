@@ -1,8 +1,9 @@
-package markus.wieland.scrabble.board.word_managment.solver.words;
+package markus.wieland.scrabble.board.word_managment.solver.words.prefix;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
 import markus.wieland.scrabble.game.letters.Letters;
 import markus.wieland.scrabble.helper.Tree;
 

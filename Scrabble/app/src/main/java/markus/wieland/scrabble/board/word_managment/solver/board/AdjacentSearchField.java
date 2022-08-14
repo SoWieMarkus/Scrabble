@@ -10,7 +10,7 @@ import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
 import markus.wieland.scrabble.board.word_managment.solver.words.ValidLetters;
 import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
-import markus.wieland.scrabble.board.word_managment.solver.words.Prefix;
+import markus.wieland.scrabble.board.word_managment.solver.words.prefix.Prefix;
 import markus.wieland.scrabble.game.Inventory;
 import markus.wieland.scrabble.helper.Axis;
 import markus.wieland.scrabble.helper.Direction;
@@ -22,6 +22,11 @@ public class AdjacentSearchField extends SearchField {
     private final ValidLetters validLetters;
     private int stepsUp;
     private int stepsLeft;
+
+    private SearchConfig searchConfigLeft;
+    private SearchConfig searchConfigRight;
+    private SearchConfig searchConfigUp;
+    private SearchConfig searchConfigDown;
 
     private String wordLeft;
     private String wordUp;
@@ -89,6 +94,7 @@ public class AdjacentSearchField extends SearchField {
                 SearchTreeNode searchTreeNode = searchTree.search(prefix.getPrefixString() + wordLeft);
                 if (searchTreeNode == null) continue;
                 prefix.setSearchTreeNode(searchTreeNode);
+                prefix.setAfterwards(wordLeft);
                 prefix.setStartCoordinate(getCoordinate().getCoordinate(Direction.LEFT, prefix.getPrefixString().length()));
                 prefix.setEndCoordinateOfWholeCurrentWord(getCoordinate().getCoordinate(Direction.RIGHT, wordRight.length()));
                 prefixesLeft.add(prefix);
@@ -101,6 +107,7 @@ public class AdjacentSearchField extends SearchField {
                 SearchTreeNode searchTreeNode = searchTree.search(prefix.getPrefixString() + wordDown);
                 if (searchTreeNode == null) continue;
                 prefix.setSearchTreeNode(searchTreeNode);
+                prefix.setAfterwards(wordDown);
                 prefix.setStartCoordinate(getCoordinate().getCoordinate(Direction.UP, prefix.getPrefixString().length()));
                 prefix.setEndCoordinateOfWholeCurrentWord(getCoordinate().getCoordinate(Direction.DOWN, wordDown.length()));
 

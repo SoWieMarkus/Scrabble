@@ -1,9 +1,13 @@
-package markus.wieland.scrabble.board.word_managment.solver.words;
+package markus.wieland.scrabble.board.word_managment.solver.words.prefix;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.scrabble.board.word_managment.SearchTreeNode;
+import markus.wieland.scrabble.game.letters.Word;
+import markus.wieland.scrabble.game.moves.Move;
 import markus.wieland.scrabble.helper.Coordinate;
 
 @Getter
@@ -12,6 +16,7 @@ import markus.wieland.scrabble.helper.Coordinate;
 public class Prefix {
 
     private final String prefixString;
+    private String afterwards;
     private final PrefixTreeNode prefixTreeNode;
     private SearchTreeNode searchTreeNode;
 

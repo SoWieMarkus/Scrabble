@@ -14,7 +14,7 @@ import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.scrabble.board.Board;
 import markus.wieland.scrabble.board.word_managment.SearchTree;
 import markus.wieland.scrabble.board.word_managment.solver.words.Pattern;
-import markus.wieland.scrabble.board.word_managment.solver.words.Prefix;
+import markus.wieland.scrabble.board.word_managment.solver.words.prefix.Prefix;
 import markus.wieland.scrabble.board.word_managment.solver.WordFinder;
 import markus.wieland.scrabble.game.Dictionary;
 import markus.wieland.scrabble.game.Inventory;
